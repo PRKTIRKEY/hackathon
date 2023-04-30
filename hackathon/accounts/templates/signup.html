@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% block content %}
+<style>
+        ul li {
+clear: both;
+}
+form {
+    margin: 0 350px;
+width: 40em;
+border: 1px solid #666;
+border-radius: 10px;
+box-shadow: .2em .2em .5em #999;
+background-color:whitesmoke;
+padding: 1em;
+overflow: hidden;
+}
+input[type="submit"] {
+display: block;
+width: 10em;
+height: 2em;
+float: left;
+background: white;
+font-size: inherit;
+border: 1px solid #04699d;
+border-radius: 4px;
+box-shadow: 2px 2px 3px rgba(0,0,0,.5);
+}
+input[type="submit"] {
+margin-left: 5em;
+margin-right: 1em;
+color: #C00; 
+}
+
+    </style>
+<h1></h1>
+<form method="post"><fieldset><ul><li>
+ <h2>Sign up</h2>   
+{% csrf_token %}
+{{ form.as_p }}
+<input class="buttons" type="submit" value="Sing Up">
+</li></ul></fieldset>
+</form>
+{% endblock content %}

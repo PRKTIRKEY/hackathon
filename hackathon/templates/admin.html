@@ -1,0 +1,32 @@
+{%extends 'home.html'%}
+
+<header>
+        <a href="{% url 'home'%}">home</a>
+        <a href= "{% url 'admin'%}">admin</a>
+        {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">logout</a></p>
+        {% else %}
+        <a href="{% url 'login' %}">login</a>
+        {% endif %}
+        <a href="{% url 'register'%}">register</a>
+</header>
+{% block content%}
+
+    <h1> welcome to namma yatri</h1>
+    <p>
+        Username:
+        <input type="text" name="Username" size="15" maxlength="30" placeholder="enter Id Number" required/>
+    </p>
+    <p>
+        Password:
+        <input type="password" name="Password" size="15" maxlength="30" placeholder="6 digits, numbers & letters"
+            required />
+    </p>
+    <p>
+        <a href="{%url 'admin_register'%}">create admin account</a>
+    </p>
+    <button type="submit">login</button>
+
+
+{% endblock content%}
